@@ -160,6 +160,67 @@ layers_data = []
 
 For small `Networks` this is a totally viable solution, but for larger `Networks` the file size will/could be a problem (and at that point just use a actual ML/DL library)
 
+## Clip of a saved model
+
+```json
+{
+    "model": [
+        {
+            "layer 0": {
+                "inputs": 3,
+                "outputs": 5,
+                "activation": "lrelu",
+                "weights": [
+                    [
+                        0.3542303106522449,
+                        0.8653294628537983,
+                        -0.630427355211071,
+                        -0.48363578705580823,
+                        0.9586305658437897
+                    ],
+                    [
+                        0.20817225676367945,
+                        -0.5055054950905695,
+                        0.42291031969795656,
+                        0.08351225249609706,
+                        0.28230949841688746
+                    ],
+                    [
+                        -0.10201185003678115,
+                        -0.03154620321901749,
+                        0.5815576473316768,
+                        -0.6537347127423905,
+                        -0.20560681685462104
+                    ]
+                ],
+                "bias": [
+                    [
+                        0.3923192293146991,
+                        0.9332738917562658,
+                        -0.5196696318454523,
+                        -0.9232822060846951,
+                        0.5348066108394234
+                    ]
+                ]
+            }
+        },
+        {
+            "layer 1": {
+                "inputs": 5,
+                "outputs": 5,
+                "activation": "lrelu",
+                "weights": [
+                    [
+                        -0.279136515256183,
+                        0.3980001679778739,
+                        -0.3431306214141641,
+                        0.6733681192272901,
+                        0.9571268915097575
+                    ],
+                    [
+                        0.5193411105882131,
+```
+
 # Loading a saved model
 To load a model/`Network` from a save file
 
