@@ -43,7 +43,7 @@ def bench_net_size():
 
     y_train = np.eye(classes)[l_train]
     print("Build Network")
-    # Build network : 3 -> 5 -> 5 -> 1
+    # Build network : 25 -> 30 -> 30 -> 3
     net = Network()
     net.add_layer(Layer(25, 30, "lrelu"))
     net.add_layer(Layer(30,30, "lrelu"))
@@ -56,14 +56,14 @@ def bench_net_size():
 
     start = time.time()
     print("Starting Training")
-    # 3. Train (and save)
+    # 3. Train
     losses = net.train(
         X_train,
         y_train,
         epochs=1000,
         learning_rate=0.01,
-        early_stop=0.05,
-        model_name="chapstick",
+        early_stop=0.001,
+        model_name="weather",
         save_path="models",
         save_model=False,
         print_loss_every=100,
@@ -78,6 +78,6 @@ def bench_net_size():
     print(f"Test accuracy:  {accuracy(net, X_test, l_test):.1%}\n")
 
     # Test with new data
-    point = [1,11,10,10,9,9,10,11,13,15,17,18,19,20,21,21,20,19,17,15,14,13,12,11,11]
+    point = [5,11,10,10,9,9,10,11,13,15,17,18,19,20,21,21,20,19,17,15,14,13,12,11,11]
     print(f"model: {point} -> class {net.predict_classes(point)[0]}, "
             f"probabilities {np.round(net.predict(point)[0], 3)}\nPick : {key.get(net.predict_classes(point)[0])}")
