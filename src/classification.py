@@ -1,9 +1,8 @@
 import numpy as np
 from pathlib import Path
-from Layer import Layer
-from Network import Network
+from .base import Layer, Network
 
-# Chapstick
+
 # price | quality (1-5) | life (days) | Buy (1 or 0)
 #   1.5  |      5        |     20      |     1
 #   1.5  |      1        |     20      |     0

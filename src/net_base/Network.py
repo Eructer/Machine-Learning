@@ -4,7 +4,7 @@ import time
 
 import numpy
 
-from Layer import Layer
+from .Layer import Layer
 
 
 class Network:

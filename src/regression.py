@@ -1,7 +1,6 @@
 import numpy as np
 
-from Layer import Layer
-from Network import Network
+from .base import Layer, Network
 
 def split(X, y, train_fraction=0.8):
     idx = np.random.permutation(len(X))
